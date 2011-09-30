@@ -8,6 +8,8 @@ gem "stringex"
 gem "open4"
 gem "json"
 gem 'jquery-rails'
+gem 'mysql2', '0.2.13'
+
 
 # ruby 1.9 compatible version
 gem "scashin133-xmpp4r-simple", '0.8.9', :require => 'xmpp4r-simple'
@@ -40,3 +42,8 @@ group :development, :test do
     gem "ruby-debug19"
   end
 end
+
+group :production do
+  gem 'thin'
+end
+
