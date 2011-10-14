@@ -13,6 +13,7 @@ module BigTuna
           end
         end
         output.finish(status.exitstatus)
+        BigTuna.logger.debug("Exit: #{status.exitstatus}")
         raise Error.new(output) if output.exit_code != 0
         output
       end
@@ -41,6 +42,8 @@ module BigTuna
 
       def initialize(output)
         @output = output
+        BigTuna.logger.error("Error: #{self.message}")
+        @output
       end
 
       def message
